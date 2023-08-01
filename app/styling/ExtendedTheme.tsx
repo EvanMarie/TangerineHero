@@ -110,6 +110,18 @@ export const customTheme = extendTheme({
     },
   },
   components: {
+    IconButton: {
+      baseStyle: {
+        bg: "TangerineHero.600",
+        color: "TangerineHero.900",
+        _hover: {
+          bg: "TangerineHero.500",
+          color: "TangerineHero.800",
+          transform: "scale(1.05)",
+          transition: "all 0.3s ease-in-out",
+        },
+      },
+    },
     Button: {
       defaultProps: {
         variant: "filled",

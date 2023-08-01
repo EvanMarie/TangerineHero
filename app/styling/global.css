@@ -40,19 +40,85 @@ html {
         }
     }
 
+/* ------------------------------VIMEO VERSION ----------------------------------------- */
 
-    .splashReel {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        padding-top: 56.25%;
-    }
+/* .splashReelContainer {
+position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
 
-    .splashFrame {
-        position: absolute; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-        border: 0;
+THIS VERSION RETAINS ASPECT RATIO OF VIDEO AND DOES NOT FILL THE SCREEN
+
+.splashFrame {
+position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+} */
+
+
+/* ------------------------------DONWLOAD VERSION ----------------------------------------- */
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    /* this will make the video act like a background */
+}
+
+.video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hide mobile video on larger screens */
+@media screen and (min-width: 768px) {
+
+    /* adjust this breakpoint to your needs */
+    .video-background.mobile {
+        display: none;
     }
+}
+
+/* Hide desktop video on smaller screens */
+@media screen and (max-width: 767px) {
+
+    /* adjust this breakpoint to your needs */
+    .video-background.desktop {
+        display: none;
+    }
+}
+
+
+/* ----------------------------------------------------------------------- */
+
+.videoCardContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.cardVideo {
+position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
