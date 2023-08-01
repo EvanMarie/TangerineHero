@@ -16,6 +16,7 @@ const TangerineHero = {
   700: "#381301",
   750: "rgba(56, 19, 1, 0.5)",
   800: "#260101",
+  825: "rgba(38, 1, 1, 0.5)",
   850: "rgba(38, 1, 1, 0.8)",
   900: "#150000",
   950: "rgba(21, 0, 0, 0.85)",
@@ -40,6 +41,7 @@ export const customTheme = extendTheme({
       700: "#381301",
       750: "rgba(56, 19, 1, 0.5)",
       800: "#260101",
+      825: "rgba(38, 1, 1, 0.5)",
       850: "rgba(38, 1, 1, 0.8)",
       900: "#150000",
       950: "rgba(21, 0, 0, 0.85)",
@@ -59,17 +61,18 @@ export const customTheme = extendTheme({
     darkBrown: TangerineHero[700],
     darkBrownTransparent: TangerineHero[750],
     darkMaroon: TangerineHero[800],
-    darkMaroonTransparent: TangerineHero[850],
+    darkMaroonVeryTransparent: TangerineHero[825],
+    darkMaroonSlightlyTransparent: TangerineHero[850],
     darkest: TangerineHero[900],
     darkestTransparent: TangerineHero[950],
   },
 
   breakpoints: {
     base: "0px",
-    sm: "600px",
-    md: "900px",
-    lg: "1200px",
-    xl: "1500px",
+    sm: "576px",
+    md: "768px",
+    lg: "1181px",
+    xl: "1200px",
   },
 
   fontSizes: {
@@ -86,11 +89,14 @@ export const customTheme = extendTheme({
   },
   styles: {
     global: {
+      html: {
+        overflow: "hidden",
+      },
       body: {
         fontFamily: "'Lato', sans-serif",
         lineHeight: "base",
         fontSize: { base: "md", sm: "lg" },
-        bg: "TangerineHero.00",
+        bg: "TangerineHero.800",
         color: "TangerineHero.100",
         padding: "0px",
       },
@@ -137,7 +143,7 @@ export const customTheme = extendTheme({
           border: "1.5px solid",
           _hover: {
             bg: "TangerineHero.200",
-            color: "TangerineHero.500",
+            color: "TangerineHero.600",
             transform: "scale(1.05)",
             transition: "all 0.3s ease-in-out",
             shadow: "xl",

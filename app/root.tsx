@@ -12,6 +12,7 @@ import { customTheme } from "./styling/ExtendedTheme";
 import EntireBackground from "./components/design/entireBackground";
 import LogoBar from "./components/design/logoBar";
 import ScrollStyles from "~/styling/global.css";
+import CarouselStyles from "~/styling/cardCarousel.css";
 
 /* animation CSS - https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" */
 
@@ -35,6 +36,10 @@ export const links: LinksFunction = () => [
   {
     rel: "stylesheet",
     href: ScrollStyles,
+  },
+  {
+    rel: "stylesheet",
+    href: CarouselStyles,
   },
 ];
 

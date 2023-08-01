@@ -6,7 +6,7 @@ export default function Logo() {
   return (
     <Box
       fontFamily="'Staatliches', cursive"
-      fontSize="5xl"
+      fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
       color="TangerineHero.300"
       bgGradient={`linear(to-b, ${theme.colors.TangerineHero[100]}, ${theme.colors.TangerineHero[300]}, ${theme.colors.TangerineHero[400]})`}
       bgClip="text"

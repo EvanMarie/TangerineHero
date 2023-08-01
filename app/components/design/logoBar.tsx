@@ -16,7 +16,7 @@ export default function LogoBar() {
       shadow="xl"
       top="0"
       left="0"
-      z-index="5"
+      zIndex="11"
     >
       <Logo />
       <Icon

@@ -21,7 +21,7 @@ export default function VideoModal({
   videoId,
 }: VideoModalProps) {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} size="full">
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Video</ModalHeader>
@@ -32,6 +32,7 @@ export default function VideoModal({
               className="cardVideo"
               src={`https://player.vimeo.com/video/${videoId}?background=1`}
               allow="autoplay; fullscreen"
+              allowFullScreen // Add this line
             ></iframe>
           </div>
         </ModalBody>

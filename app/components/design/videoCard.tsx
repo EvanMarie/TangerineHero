@@ -6,7 +6,6 @@ import {
   Heading,
   IconButton,
   Image,
-  Text,
   VStack,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -32,26 +31,25 @@ export default function VideoCard({
 
   return (
     <Card
-      p="20px"
-      pb="10px"
-      bg="TangerineHero.700"
+      w={{ base: "275px", lg: "375px" }}
+      color="TangerineHero.100"
+      textShadow="2px 2px 10px black"
+      p="10px 15px"
+      bg="TangerineHero.850"
+      shadow="lg"
       zIndex={23}
-      _hover={{ bg: "TangerineHero.850", transition: "all .4s ease-in-out" }}
+      _hover={{
+        color: "TangerineHero.800",
+        bg: "TangerineHero.250",
+        border: `2px solid `,
+        transform: "scale(1.03)",
+        transition: "all .3s ease-in-out",
+        textShadow: "2px 2px 8px white",
+      }}
     >
-      <Card
-        color="TangerineHero.100"
-        width="375px"
-        p="15px"
-        bg="TangerineHero.600"
-        _hover={{
-          cursor: "pointer",
-          transform: "scale(1.03)",
-          transition: "all .3s ease-in-out",
-          shadow: "xl",
-        }}
-      >
-        <VStack>
-          <Heading fontSize="lg">{title}</Heading>
+      <VStack>
+        <Heading fontSize={{ base: "md", lg: "lg" }}>{title}</Heading>
+        <HStack w="100%">
           <Center w="100%" h="100%" onClick={videoModalDisclosure.onOpen}>
             <Image
               src={thumbnail}
@@ -62,26 +60,38 @@ export default function VideoCard({
               borderRadius="10px"
             />
           </Center>
-          <Text noOfLines={2} fontSize="sm">
-            {info}
-          </Text>
-        </VStack>
-      </Card>
+          {/* <VStack justify="space-between" spacing="20px">
+            <IconButton
+              icon={<BsFillPlayCircleFill />}
+              aria-label="play video"
+              size="lg"
+              onClick={videoModalDisclosure.onOpen}
+            />
+            <IconButton
+              icon={<BsInfoCircleFill />}
+              aria-label="more info"
+              size="lg"
+              onClick={infoModalDisclosure.onOpen}
+            />
+          </VStack>{" "} */}
+        </HStack>
+      </VStack>
       <HStack pt="10px" px="10px" width="100%" justify="space-evenly">
         <IconButton
           icon={<BsFillPlayCircleFill />}
           aria-label="play video"
-          size="lg"
+          size={{ base: "md", lg: "lg" }}
           onClick={videoModalDisclosure.onOpen}
         />
         <IconButton
           icon={<BsInfoCircleFill />}
           aria-label="more info"
-          size="lg"
+          size={{ base: "md", lg: "lg" }}
           onClick={infoModalDisclosure.onOpen}
         />
       </HStack>
       <VideoModal
+        videoId={videoId}
         isOpen={videoModalDisclosure.isOpen}
         onClose={videoModalDisclosure.onClose}
       />
