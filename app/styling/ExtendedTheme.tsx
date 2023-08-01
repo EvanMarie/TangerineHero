@@ -119,6 +119,7 @@ export const customTheme = extendTheme({
           color: "TangerineHero.800",
           transform: "scale(1.05)",
           transition: "all 0.3s ease-in-out",
+          shadow: "xl",
         },
       },
     },
@@ -139,6 +140,7 @@ export const customTheme = extendTheme({
             color: "TangerineHero.500",
             transform: "scale(1.05)",
             transition: "all 0.3s ease-in-out",
+            shadow: "xl",
           },
           _active: {
             bg: "TangerineHero.400",

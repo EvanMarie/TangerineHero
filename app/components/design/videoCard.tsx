@@ -3,8 +3,10 @@ import {
   Card,
   Center,
   HStack,
+  Heading,
   IconButton,
   Image,
+  Text,
   VStack,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -29,23 +31,40 @@ export default function VideoCard({
   const infoModalDisclosure = useDisclosure();
 
   return (
-    <Card p="20px" pb="10px" bg="TangerineHero.700">
-      <Card width="375px" p="20px" bg="TangerineHero.600">
+    <Card
+      p="20px"
+      pb="10px"
+      bg="TangerineHero.700"
+      zIndex={23}
+      _hover={{ bg: "TangerineHero.850", transition: "all .4s ease-in-out" }}
+    >
+      <Card
+        color="TangerineHero.100"
+        width="375px"
+        p="15px"
+        bg="TangerineHero.600"
+        _hover={{
+          cursor: "pointer",
+          transform: "scale(1.03)",
+          transition: "all .3s ease-in-out",
+          shadow: "xl",
+        }}
+      >
         <VStack>
-          <Center
-            bg="red"
-            w="100%"
-            h="100%"
-            onClick={videoModalDisclosure.onOpen}
-          >
+          <Heading fontSize="lg">{title}</Heading>
+          <Center w="100%" h="100%" onClick={videoModalDisclosure.onOpen}>
             <Image
               src={thumbnail}
               alt="thumbnail"
               width="100%"
               height="100%"
               objectFit="cover"
+              borderRadius="10px"
             />
           </Center>
+          <Text noOfLines={2} fontSize="sm">
+            {info}
+          </Text>
         </VStack>
       </Card>
       <HStack pt="10px" px="10px" width="100%" justify="space-evenly">
@@ -69,7 +88,7 @@ export default function VideoCard({
       <InfoModal
         isOpen={infoModalDisclosure.isOpen}
         onClose={infoModalDisclosure.onClose}
-      />
+      />{" "}
     </Card>
   );
 }
