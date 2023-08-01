@@ -1,8 +1,9 @@
-import { HStack, Icon } from "@chakra-ui/react";
+import { HStack, Icon, useTheme } from "@chakra-ui/react";
 import Logo from "./logo";
 import { BsFillCaretDownSquareFill } from "react-icons/bs";
 
 export default function LogoBar() {
+  const theme = useTheme();
   return (
     <HStack
       p="0px 20px"
@@ -17,6 +18,7 @@ export default function LogoBar() {
       top="0"
       left="0"
       zIndex="11"
+      boxShadow={`0px 4px 8px 0px  ${theme.colors.TangerineHero[700]}`}
     >
       <Logo />
       <Icon

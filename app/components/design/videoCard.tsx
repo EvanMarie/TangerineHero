@@ -33,14 +33,14 @@ export default function VideoCard({
     <Card
       w={{ base: "275px", lg: "375px" }}
       color="TangerineHero.100"
-      textShadow="2px 2px 10px black"
+      textShadow="2px 2px 5px black"
       p="10px 15px"
       bg="TangerineHero.850"
-      shadow="lg"
+      shadow="2px 2px 10px rgba(255, 130, 33, 0.5)"
       zIndex={23}
       _hover={{
         color: "TangerineHero.800",
-        bg: "TangerineHero.250",
+        bg: "TangerineHero.225",
         border: `2px solid `,
         transform: "scale(1.03)",
         transition: "all .3s ease-in-out",
@@ -57,7 +57,7 @@ export default function VideoCard({
               width="100%"
               height="100%"
               objectFit="cover"
-              borderRadius="10px"
+              borderRadius="3px"
             />
           </Center>
           {/* <VStack justify="space-between" spacing="20px">
@@ -92,6 +92,7 @@ export default function VideoCard({
       </HStack>
       <VideoModal
         videoId={videoId}
+        title={title}
         isOpen={videoModalDisclosure.isOpen}
         onClose={videoModalDisclosure.onClose}
       />

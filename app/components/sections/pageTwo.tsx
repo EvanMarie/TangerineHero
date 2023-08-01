@@ -14,8 +14,8 @@ export default function PageTwo() {
         <VStack
           w="100%"
           h="100%"
-          height="85vh"
-          spacing={{ base: "10px", md: "15px", lg: "20px" }}
+          height="80vh"
+          spacing={{ base: "0px", md: "15px", lg: "20px" }}
         >
           <VStack w="100%" h="100%" spacing={1}>
             <SectionHeading>- EDIT -</SectionHeading>

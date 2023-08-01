@@ -11,9 +11,10 @@ export default function SectionHeading({ children }: SectionHeadingProps) {
     <Box
       fontFamily="'Staatliches', cursive"
       fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}
-      color="TangerineHero.300"
-      bgGradient={`linear(to-b, ${theme.colors.TangerineHero[800]}, ${theme.colors.TangerineHero[700]}, ${theme.colors.TangerineHero[600]})`}
-      bgClip="text"
+      color="TangerineHero.800"
+      textShadow={`2px 2px 20px  ${theme.colors.TangerineHero[200]}`}
+      // bgGradient={`linear(to-b, ${theme.colors.TangerineHero[800]}, ${theme.colors.TangerineHero[700]}, ${theme.colors.TangerineHero[600]})`}
+      // bgClip="text"
     >
       {children}
     </Box>

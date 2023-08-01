@@ -9,6 +9,14 @@ import {
   ModalFooter,
   Button,
 } from "@chakra-ui/react";
+import {
+  ModalBodyStyle,
+  ModalCloseButtonStyle,
+  ModalContentStyle,
+  ModalFooterStyle,
+  ModalHeaderStyle,
+  ModalOverlayStyle,
+} from "~/styling/modalStyles";
 
 interface InfoModalProps {
   isOpen: boolean;
@@ -16,13 +24,13 @@ interface InfoModalProps {
 }
 
 const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => (
-  <Modal isOpen={isOpen} onClose={onClose}>
-    <ModalOverlay />
-    <ModalContent>
-      <ModalHeader>Info</ModalHeader>
-      <ModalCloseButton />
-      <ModalBody>Your info goes here.</ModalBody>
-      <ModalFooter>
+  <Modal isOpen={isOpen} onClose={onClose} size="2xl">
+    <ModalOverlay {...ModalOverlayStyle} />
+    <ModalContent {...ModalContentStyle}>
+      <ModalHeader {...ModalHeaderStyle}>Video</ModalHeader>
+      <ModalCloseButton {...ModalCloseButtonStyle} />
+      <ModalBody {...ModalBodyStyle}>Your info goes here.</ModalBody>
+      <ModalFooter {...ModalFooterStyle}>
         <Button onClick={onClose}>Close</Button>
       </ModalFooter>
     </ModalContent>
