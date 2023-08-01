@@ -21,6 +21,7 @@ const TangerineHero = {
   800: "#260101",
   825: "rgba(38, 1, 1, 0.5)",
   850: "rgba(38, 1, 1, 0.8)",
+  875: "rgba(38, 1, 1, 0.95)",
   900: "#150000",
   950: "rgba(21, 0, 0, 0.85)",
 };
@@ -49,6 +50,7 @@ export const customTheme = extendTheme({
       800: "#260101",
       825: "rgba(38, 1, 1, 0.5)",
       850: "rgba(38, 1, 1, 0.8)",
+      875: "rgba(38, 1, 1, 0.85)",
       900: "#150000",
       950: "rgba(21, 0, 0, 0.85)",
     },
@@ -72,6 +74,7 @@ export const customTheme = extendTheme({
     darkMaroon: TangerineHero[800],
     darkMaroonVeryTransparent: TangerineHero[825],
     darkMaroonSlightlyTransparent: TangerineHero[850],
+    darkMaroonBarelyTransparent: TangerineHero[875],
     darkest: TangerineHero[900],
     darkestTransparent: TangerineHero[950],
   },
@@ -117,6 +120,7 @@ export const customTheme = extendTheme({
           color: "TangerineHero.400",
           transform: "scale(1.05)",
           transition: "all 0.3s ease-in-out",
+          textDecoration: "none !important",
         },
       },
       p: {
@@ -145,7 +149,8 @@ export const customTheme = extendTheme({
       },
       variants: {
         filled: {
-          bg: "TangerineHero.300",
+          // bg: "TangerineHero.300",
+          bgGradient: `linear(to-b, ${TangerineHero[100]}, ${TangerineHero[300]}, ${TangerineHero[400]})`,
           color: "TangerineHero.800",
           fontWeight: "bold",
           borderRadius: "4px",

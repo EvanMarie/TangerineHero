@@ -5,8 +5,11 @@ import PageTwo from "~/components/sections/pageTwo";
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Tangerine Hero" },
+    {
+      name: "Video Editing and Motion Graphics",
+      content: "Welcome to Tangerine Hero!",
+    },
   ];
 };
 

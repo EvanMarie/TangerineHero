@@ -48,7 +48,11 @@ export default function VideoModal({
         <ModalBody {...ModalBodyStyle}>
           <div className="videoCardContainer">
             {/* Use the Skeleton component to show a loading state */}
-            <Skeleton isLoaded={!isLoading}>
+            <Skeleton
+              isLoaded={!isLoading}
+              startColor="TangerineHero.300"
+              endColor="TangerineHero.500"
+            >
               <iframe
                 className="cardVideo"
                 src={`https://player.vimeo.com/video/${videoId}?background=1`}

@@ -12,11 +12,13 @@ export const ModalContentStyle = {
 
 export const ModalHeaderStyle = {
   bg: "TangerineHero.900",
-  color: "TangerineHero.100",
+  color: "TangerineHero.200",
   borderTopRadius: "md",
 };
 
-export const ModalCloseButtonStyle = {};
+export const ModalCloseButtonStyle = {
+  color: "TangerineHero.200",
+};
 
 export const ModalBodyStyle = {
   py: "15px",

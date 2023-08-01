@@ -40,11 +40,12 @@ export default function VideoCard({
       zIndex={23}
       _hover={{
         color: "TangerineHero.800",
-        bg: "TangerineHero.225",
+        // bg: "TangerineHero.225",
+        bgGradient: "linear(to-r, TangerineHero.300, TangerineHero.400)",
         border: `2px solid `,
         transform: "scale(1.03)",
         transition: "all .3s ease-in-out",
-        textShadow: "2px 2px 8px white",
+        textShadow: "1px 1px 8px white",
       }}
     >
       <VStack>
@@ -57,23 +58,10 @@ export default function VideoCard({
               width="100%"
               height="100%"
               objectFit="cover"
-              borderRadius="3px"
+              borderRadius="4px"
+              shadow="lg"
             />
           </Center>
-          {/* <VStack justify="space-between" spacing="20px">
-            <IconButton
-              icon={<BsFillPlayCircleFill />}
-              aria-label="play video"
-              size="lg"
-              onClick={videoModalDisclosure.onOpen}
-            />
-            <IconButton
-              icon={<BsInfoCircleFill />}
-              aria-label="more info"
-              size="lg"
-              onClick={infoModalDisclosure.onOpen}
-            />
-          </VStack>{" "} */}
         </HStack>
       </VStack>
       <HStack pt="10px" px="10px" width="100%" justify="space-evenly">
@@ -82,12 +70,14 @@ export default function VideoCard({
           aria-label="play video"
           size={{ base: "md", lg: "lg" }}
           onClick={videoModalDisclosure.onOpen}
+          shadow="xl"
         />
         <IconButton
           icon={<BsInfoCircleFill />}
           aria-label="more info"
           size={{ base: "md", lg: "lg" }}
           onClick={infoModalDisclosure.onOpen}
+          shadow="xl"
         />
       </HStack>
       <VideoModal
@@ -97,6 +87,8 @@ export default function VideoCard({
         onClose={videoModalDisclosure.onClose}
       />
       <InfoModal
+        title={title}
+        info={info}
         isOpen={infoModalDisclosure.isOpen}
         onClose={infoModalDisclosure.onClose}
       />{" "}

@@ -11,6 +11,7 @@ export default function PageTwo() {
   return (
     <PageContainer>
       <ContentContainer>
+        <div id="pageTwo" />
         <VStack
           w="100%"
           h="100%"

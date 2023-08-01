@@ -8,6 +8,7 @@ import {
   ModalBody,
   ModalFooter,
   Button,
+  Center,
 } from "@chakra-ui/react";
 import {
   ModalBodyStyle,
@@ -21,20 +22,31 @@ import {
 interface InfoModalProps {
   isOpen: boolean;
   onClose: () => void;
+  title?: string;
+  info?: string;
 }
 
-const InfoModal: React.FC<InfoModalProps> = ({ isOpen, onClose }) => (
-  <Modal isOpen={isOpen} onClose={onClose} size="2xl">
-    <ModalOverlay {...ModalOverlayStyle} />
-    <ModalContent {...ModalContentStyle}>
-      <ModalHeader {...ModalHeaderStyle}>Video</ModalHeader>
-      <ModalCloseButton {...ModalCloseButtonStyle} />
-      <ModalBody {...ModalBodyStyle}>Your info goes here.</ModalBody>
-      <ModalFooter {...ModalFooterStyle}>
-        <Button onClick={onClose}>Close</Button>
-      </ModalFooter>
-    </ModalContent>
-  </Modal>
-);
-
-export default InfoModal;
+export default function InfoModal({
+  isOpen,
+  onClose,
+  title,
+  info,
+}: InfoModalProps) {
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} size="2xl">
+      <ModalOverlay {...ModalOverlayStyle} />
+      <ModalContent {...ModalContentStyle}>
+        <ModalHeader {...ModalHeaderStyle}>{title}</ModalHeader>
+        <ModalCloseButton {...ModalCloseButtonStyle} />
+        <ModalBody {...ModalBodyStyle}>
+          <Center w="100%" h="100%" p="15px">
+            {info}
+          </Center>
+        </ModalBody>
+        <ModalFooter {...ModalFooterStyle}>
+          <Button onClick={onClose}>Close</Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  );
+}
