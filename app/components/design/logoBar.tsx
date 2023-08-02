@@ -110,7 +110,7 @@ export default function LogoBar() {
             >
               <NavLink to="#pageOne">
                 <Box {...LinkStyle} onClick={onClose}>
-                  Main
+                  Home
                 </Box>
               </NavLink>
               <NavLink to="#pageTwo">
