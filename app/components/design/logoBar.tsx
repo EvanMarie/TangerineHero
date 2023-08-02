@@ -15,27 +15,34 @@ import {
   Stack,
   Image,
   Text,
+  IconButton,
 } from "@chakra-ui/react";
 import Logo from "./logo";
 import { BsFillCaretDownSquareFill } from "react-icons/bs";
+import { FaVimeo, FaLinkedin } from "react-icons/fa";
+import { NavLink } from "@remix-run/react";
+import { ImSoundcloud2 } from "react-icons/im";
 
 export default function LogoBar() {
   const theme = useTheme();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const LinkStyle = {
-    w: "100%",
-    py: "15px",
+    w: { base: "375px", lg: "250px" },
+    py: "10px",
     align: "center",
     color: "TangerineHero.200",
     fontSize: "2xl",
-    textShadow: `1px 1px 4px ${theme.colors.TangerineHero[900]}`,
+    cursor: "pointer",
+    fontWeight: "600",
+    textShadow: `2px 2px 20px ${theme.colors.TangerineHero[500]}`,
     _hover: {
-      bg: "TangerineHero.175",
-      color: "TangerineHero.300",
+      bg: "TangerineHero.300",
+      color: "TangerineHero.700",
       transform: "scale(1.05)",
       rounded: "sm",
       transition: "all 0.3s ease-in-out",
+      textShadow: `2px 2px 20px ${theme.colors.TangerineHero[100]}`,
     },
   };
 
@@ -56,7 +63,10 @@ export default function LogoBar() {
         zIndex="11"
         boxShadow={`0px 4px 8px 0px ${theme.colors.TangerineHero[700]}`}
       >
-        <Logo />
+        {" "}
+        <NavLink to="#pageOne">
+          <Logo />
+        </NavLink>
         <Icon
           as={BsFillCaretDownSquareFill}
           w={9}
@@ -72,56 +82,121 @@ export default function LogoBar() {
       </HStack>
 
       <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
-        <DrawerOverlay bg="TangerineHero.250" />
+        <DrawerOverlay
+          bg="TangerineHero.275"
+          backdropFilter="invert(10%) blur(2px)"
+        />
         <DrawerContent
           w="100%"
-          h={{ base: "100%", sm: "100%", md: "400px" }}
-          bg="TangerineHero.875"
+          h={{ base: "100%", sm: "fit-content", lg: "275px" }}
+          bg="TangerineHero.800"
           shadow="xl"
         >
           <DrawerCloseButton color="TangerineHero.200" size="lg" />
-          <DrawerHeader>
-            <Logo />
+          <DrawerHeader pb="0px">
+            <NavLink to="#pageOne" onClick={onClose}>
+              <Logo />
+            </NavLink>
           </DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody pt="0px">
             <Stack
-              direction={{ base: "column", md: "row" }}
+              w="100%"
+              direction={{ base: "column", lg: "row" }}
               align="center"
-              justify={{ base: "center", md: "space-evenly" }}
-              spacing={0}
-              py="20px"
+              justify={{ base: "center", lg: "space-evenly" }}
+              spacing={{ base: "30px", lg: "0px" }}
+              py={{ base: "60px", lg: "20px" }}
             >
-              <Box onClick={onClose} {...LinkStyle}>
-                <Link href="#pageOne">Main</Link>
-              </Box>
-              <Box onClick={onClose} {...LinkStyle}>
-                <Link href="#pageTwo">Experience</Link>
-              </Box>
-              <Box onClick={onClose} {...LinkStyle}>
-                <Link href="#pageThree">About</Link>
-              </Box>
-              <Box onClick={onClose} {...LinkStyle}>
-                <Link href="/services">Another Link</Link>
-              </Box>
+              <NavLink to="#pageOne">
+                <Box {...LinkStyle} onClick={onClose}>
+                  Main
+                </Box>
+              </NavLink>
+              <NavLink to="#pageTwo">
+                <Box {...LinkStyle} onClick={onClose}>
+                  Experience
+                </Box>
+              </NavLink>
+              <NavLink to="#pageThree">
+                <Box {...LinkStyle} onClick={onClose}>
+                  About
+                </Box>
+              </NavLink>
             </Stack>
           </DrawerBody>
 
-          <DrawerFooter>
-            <HStack>
-              <Text fontSize="sm">Created by </Text>
-              <Link href="http://www.iheartcomponents.com" isExternal>
-                <Image
-                  src="/images/iheartcomponents.png"
-                  w="150px"
-                  rounded="md"
-                  _hover={{
-                    transform: "scale(1.05)",
-                    transition: "all 0.3s ease-in-out",
-                  }}
-                />
-              </Link>
-            </HStack>
+          <DrawerFooter
+            bg="TangerineHero.475"
+            color="TangerineHero.900"
+            fontWeight="600"
+          >
+            <Stack
+              direction={{ base: "column", lg: "row" }}
+              w="100%"
+              justify={{ base: "center", lg: "space-between" }}
+              align="center"
+              textAlign="center"
+              spacing="20px"
+            >
+              <Stack
+                direction={{ base: "column", lg: "row" }}
+                spacing={{ base: "10px", lg: "20px" }}
+                justify="space-evenly"
+                align="center"
+                flexGrow="1"
+              >
+                <Box>678-640-3557</Box>
+                <Box>joel@tangerinehero.com</Box>
+                {/* <Box>Other: </Box> */}
+                <HStack w="150px" justify="space-between">
+                  <Link
+                    href="https://www.linkedin.com/in/tangerinehero/"
+                    isExternal
+                  >
+                    <IconButton
+                      as={FaLinkedin}
+                      aria-label="social media"
+                      cursor="pointer"
+                    />
+                  </Link>
+                  <Link href="https://vimeo.com/tangerineheroatl" isExternal>
+                    <IconButton
+                      as={FaVimeo}
+                      aria-label="social media"
+                      cursor="pointer"
+                    />
+                  </Link>
+                  <Link
+                    href="https://www.instagram.com/tangerinehero/"
+                    isExternal
+                  >
+                    <IconButton
+                      // as={FaSoundcloud}
+                      as={ImSoundcloud2}
+                      aria-label="social media"
+                      cursor="pointer"
+                    />
+                  </Link>
+                  {/* <IconButton as={} aria-label="social media" /> */}
+                </HStack>{" "}
+              </Stack>
+              <HStack>
+                <Text fontSize="sm">Created by </Text>
+                <Link href="http://www.iheartcomponents.com" isExternal>
+                  <Image
+                    src="/images/iheartcomponents.png"
+                    w="150px"
+                    rounded="md"
+                    cursor="pointer"
+                    _hover={{
+                      transform: "scale(1.05)",
+                      transition: "all 0.3s ease-in-out",
+                    }}
+                  />
+                </Link>
+              </HStack>
+            </Stack>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

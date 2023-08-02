@@ -1,8 +1,8 @@
 export const ModalStyle = {};
 
 export const ModalOverlayStyle = {
-  bg: "TangerineHero.350",
-  blur: "2px",
+  bg: "TangerineHero.275",
+  backdropFilter: "invert(10%) blur(2px)",
 };
 
 export const ModalContentStyle = {

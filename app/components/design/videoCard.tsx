@@ -68,14 +68,18 @@ export default function VideoCard({
         <IconButton
           icon={<BsFillPlayCircleFill />}
           aria-label="play video"
-          size={{ base: "md", lg: "lg" }}
+          // size={{ base: "md", lg: "lg" }}
+          size="md"
+          w="60px"
           onClick={videoModalDisclosure.onOpen}
           shadow="xl"
         />
         <IconButton
           icon={<BsInfoCircleFill />}
           aria-label="more info"
-          size={{ base: "md", lg: "lg" }}
+          // size={{ base: "md", lg: "lg" }}
+          size="md"
+          w="60px"
           onClick={infoModalDisclosure.onOpen}
           shadow="xl"
         />

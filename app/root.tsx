@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Portal } from "@chakra-ui/react";
 import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
@@ -56,7 +56,9 @@ export default function App() {
         {" "}
         <ChakraProvider theme={customTheme}>
           <EntireBackground>
-            <LogoBar />
+            <Portal>
+              <LogoBar />
+            </Portal>
             <Outlet />
           </EntireBackground>
           <ScrollRestoration />
