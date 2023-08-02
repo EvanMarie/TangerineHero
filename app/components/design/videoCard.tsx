@@ -64,13 +64,14 @@ export default function VideoCard({
           </Center>
         </HStack>
       </VStack>
-      <HStack pt="10px" px="10px" width="100%" justify="space-evenly">
+      <HStack pt="10px" px="10px" width="100%" justify="center" spacing="20px">
         <IconButton
           icon={<BsFillPlayCircleFill />}
           aria-label="play video"
           // size={{ base: "md", lg: "lg" }}
-          size="md"
-          w="60px"
+          size="lg"
+          w="70px"
+          h="38px"
           onClick={videoModalDisclosure.onOpen}
           shadow="xl"
         />
@@ -78,8 +79,9 @@ export default function VideoCard({
           icon={<BsInfoCircleFill />}
           aria-label="more info"
           // size={{ base: "md", lg: "lg" }}
-          size="md"
-          w="60px"
+          size="lg"
+          w="70px"
+          h="38px"
           onClick={infoModalDisclosure.onOpen}
           shadow="xl"
         />

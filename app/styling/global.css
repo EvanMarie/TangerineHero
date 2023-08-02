@@ -16,13 +16,13 @@ html {
     position: relative;
     height: 100vh;
     width: 100%;
+    padding-top: 75px;
     z-index: 1;
     display: flex;
     /* align-items: center; */
     align-items: flex-start;
     justify-content: center;
     overflow: hidden;
-    /* padding-top: 75px; */
     scroll-snap-align: start;
     scroll-snap-stop: always;
     background: linear-gradient(90deg, #742701 0%, #d15024 25%, #ff612b 50%, #ff8221 75%, #facc4b 100%);

@@ -1,11 +1,9 @@
-import { PageContainer } from "../design/pageContainer";
 import SplashReel from "../design/splashReel";
 
 export default function PageOne() {
   return (
-    <PageContainer>
-      <div id="pageOne" />
+    <div className="snapScrollPage" id="pageOne">
       <SplashReel />
-    </PageContainer>
+    </div>
   );
 }

@@ -1,7 +1,6 @@
 // import { VideosEdit } from "~/videoContent.tsx/editVideos";
 import { VideosEdit, VideosMotion } from "~/videoContent.tsx/videoArrays";
 import ContentContainer from "../design/contentContainer";
-import { PageContainer } from "../design/pageContainer";
 import VideoCarousel from "../design/videoCarousel";
 import VideoCard from "../design/videoCard";
 import { VStack } from "@chakra-ui/react";
@@ -9,11 +8,9 @@ import SectionHeading from "../design/sectionHeading";
 
 export default function PageTwo() {
   return (
-    <PageContainer>
+    <div className="snapScrollPage" id="pageTwo">
       <ContentContainer>
-        <div id="pageTwo" />
         <VStack
-          pt="75px"
           w="100%"
           h="100%"
           height="80vh"
@@ -49,6 +46,6 @@ export default function PageTwo() {
           </VStack>
         </VStack>
       </ContentContainer>
-    </PageContainer>
+    </div>
   );
 }
