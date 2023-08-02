@@ -88,7 +88,7 @@ export default function LogoBar() {
         />
         <DrawerContent
           w="100%"
-          h={{ base: "100%", sm: "fit-content", lg: "275px" }}
+          h={{ base: "100%", lg: "275px" }}
           bg="TangerineHero.800"
           shadow="xl"
         >
@@ -115,7 +115,7 @@ export default function LogoBar() {
               </NavLink>
               <NavLink to="#pageTwo">
                 <Box {...LinkStyle} onClick={onClose}>
-                  Experience
+                  Work
                 </Box>
               </NavLink>
               <NavLink to="#pageThree">

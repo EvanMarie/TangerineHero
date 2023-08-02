@@ -15,11 +15,9 @@ export default function SplashReel() {
           <source src="/video/splashDesktop.mp4" type="video/mp4" />
         </video>
       </div>
-      {/*  <div className="video-background mobile">
-        <video playsInline={true} autoPlay={true} muted={true} loop={true}>
-          <source src="./media/videoMobile.mov" type="video/mp4" />
-        </video> 
-      </div>*/}
+      <div className="video-background mobile">
+        <img src="/images/joelHeadshot.png" alt="Mobile Background" />
+      </div>
     </div>
   );
 }

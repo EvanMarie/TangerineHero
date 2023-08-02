@@ -45,31 +45,36 @@ html {
         }
     }
 
-    /* @media (min-width: 992px) {
-        .snapScrollPage {
-            justify-content: flex-start;
-        }
-    } */
-
-/* ------------------------------VIMEO VERSION ----------------------------------------- */
-
-/* .splashReelContainer {
-position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
+/* Hide mobile image by default */
+.video-background.mobile {
+    display: none;
 }
 
-THIS VERSION RETAINS ASPECT RATIO OF VIDEO AND DOES NOT FILL THE SCREEN
+/* Show mobile image and hide desktop video on small screens */
+@media only screen and (max-width: 768px) {
+    .video-background.desktop {
+        display: none;
+    }
 
-.splashFrame {
-position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-} */
+    .video-background.mobile {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .video-background.mobile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
 
 
 /* ------------------------------DONWLOAD VERSION ----------------------------------------- */
